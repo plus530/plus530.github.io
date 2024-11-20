@@ -2,9 +2,27 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>plus530.com - GitHub</title>
+    <title>plus530 - Home</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script>
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('countDown').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+    
   </head>
   <body>
     <header>
@@ -12,6 +30,7 @@
     </header>
     <!-- Begin page content -->
     <div class="container">
+      <div id="countDown"></div>
     </div>      
     <footer class="footer">
     </footer>
